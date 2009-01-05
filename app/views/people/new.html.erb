@@ -1,0 +1,20 @@
+<h1><%= t 'people.new' %></h1>
+<% form_for @person do |f| %>
+	<dl>
+		<dt><%= t('people.firstname')%></dt>
+		<dd><%= f.text_field :firstname %></dd>
+		<dt><%= t('people.lastname')%></dt>
+		<dd><%= f.text_field :lastname %></dd>
+		<dt><%= t('people.nickname')%></dt>
+		<dd><%= f.text_field :nickname %></dd>
+		<dt><%= t('people.roles')%></dt>
+		<% for role in Role.all %>
+			<% fields_for "person[role_attributes][]", role do |roles_form| %>
+  			<%= roles_form.check_box :name, {}, role.name, '' %> <%= roles_form.label :name, role.name %>
+			<% end %>
+		<% end %>
+		<dt><%= t('people.coments')%></dt>
+		<dd><%= f.text_area :comments %></dd>
+	</dl>
+	<%= f.submit t('submit') %>
+<% end %>

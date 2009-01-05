@@ -1,0 +1,7 @@
+<h1><%= t 'people.title' %></h1>
+<%= link_to(t('people.new'), new_person_path)%>
+<ul>
+  <% for person in @people %>
+    <li><%= link_to(person.name, person) %></li>
+  <% end %>
+</ul>
