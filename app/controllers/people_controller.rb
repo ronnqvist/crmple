@@ -5,6 +5,7 @@ class PeopleController < ApplicationController
   
   def new
     @person = Person.new
+    @roles  = Role.all
   end
 
   def edit

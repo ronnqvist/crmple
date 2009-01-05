@@ -4,9 +4,14 @@ class Person < ActiveRecord::Base
   has_many :addresses
   has_many :phones
   has_many :emails
-  def role_attributes=(attributes)
-    attributes.each do |attribute|
-      roles.build(attribute)
+  
+  # User validations
+  validates_presence_of :firstname, :lastname, :nickname
+  
+  # Assigns user to roles
+  def roles=(attributes)
+    attributes.each do |id, value|
+      self.roles << Role.find(id)
     end
-  end 
+  end
 end
