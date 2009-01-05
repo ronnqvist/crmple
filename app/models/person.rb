@@ -14,4 +14,8 @@ class Person < ActiveRecord::Base
       self.roles << Role.find(id)
     end
   end
+  
+  def full_name
+    "#{self.firstname} #{self.lastname}"
+  end
 end

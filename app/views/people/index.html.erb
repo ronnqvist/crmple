@@ -2,6 +2,6 @@
 <%= link_to(t('people.new'), new_person_path)%>
 <ul>
   <% for person in @people %>
-    <li><%= link_to(person.name, person) %></li>
+    <li><%= link_to(person.full_name, person) %></li>
   <% end %>
 </ul>
