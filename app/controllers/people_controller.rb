@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
   def index
-    @people = Person.all(:include => :roles)
+    @people = Person.all(:include => :roles, :order => 'lastname ASC')
   end
   
   def new
@@ -12,6 +12,7 @@ class PeopleController < ApplicationController
   end
 
   def show
+    @person = Person.find(params[:id])
   end
 
   def destroy
