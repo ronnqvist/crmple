@@ -11,14 +11,14 @@
 		<dt><%= t('people.nickname')%></dt>
 		<dd><%= f.text_field :nickname %></dd>
 		<dt><%= t('people.roles')%></dt>
-
-      <% for role in @roles %>
+		<% for role in @roles %>
+			<dd>
          <% fields_for "person[roles][]", role do |roles| %>
             <%= roles.check_box :name, { :checked => false }, role.name, '' %>
             <%= roles.label :name, role.name %>
          <% end %>
-      <% end %>
-		
+			</dd>
+    <% end %>
 		<dt><%= t('people.coments')%></dt>
 		<dd><%= f.text_area :comments %></dd>
 	</dl>

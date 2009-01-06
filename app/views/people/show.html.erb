@@ -1,4 +1,5 @@
 <h1><%= t 'people.show' %></h1>
+<%= link_to(t('people.edit'), edit_person_path)%>
 <dl>
 	<dt><%= t('people.firstname')%></dt>
 	<dd><%= @person.firstname %></dd>
