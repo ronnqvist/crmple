@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20090105171036) do
   create_table "emails", :force => true do |t|
     t.integer  "person_id"
     t.string   "type"
+    t.boolean  "receive_newsletters"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
