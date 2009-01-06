@@ -1,7 +1,24 @@
 <h1><%= t 'people.title' %></h1>
 <%= link_to(t('people.new'), new_person_path)%>
-<ul>
+<table>
+	<thead>
+		<tr>
+			<th><%= t 'people.name' %></th>
+			<th><%= t 'people.nickname' %></th>
+			<th><%= t 'people.town' %></th>
+			<th><%= t 'people.roles' %></th>
+		</tr>
+	</thead>
   <% for person in @people %>
-    <li><%= link_to(person.full_name, person) %></li>
+		<tr>
+    	<td><%= link_to(person.lastname_firstname, person) %></td>
+			<td><%= person.nickname %></td>
+			<td><%#= address.post_office %></td>
+			<td>
+				<% for role in person.roles %>
+			  	<%= role.name %>
+				<% end %>
+			</td>
+		</tr>
   <% end %>
-</ul>
+</table>

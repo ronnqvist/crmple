@@ -1,2 +1,16 @@
-<h1>People#show</h1>
-<p>Find me in app/views/people/show.html.erb</p>
+<h1><%= t 'people.show' %></h1>
+<%= link_to(t('people.edit'), edit_person_path)%>
+<dl>
+	<dt><%= t('people.firstname')%></dt>
+	<dd><%= @person.firstname %></dd>
+	<dt><%= t('people.lastname')%></dt>
+	<dd><%= @person.lastname %></dd>
+	<dt><%= t('people.nickname')%></dt>
+	<dd><%= @person.nickname %></dd>
+	<dt><%= t('people.roles')%></dt>
+	<% for role in @person.roles %>
+  	<dd><%= role.name %></dd>
+	<% end %>
+	<dt><%= t('people.coments')%></dt>
+	<dd><%= @person.comments %></dd>
+</dl>

@@ -18,4 +18,8 @@ class Person < ActiveRecord::Base
   def full_name
     "#{self.firstname} #{self.lastname}"
   end
+
+  def lastname_firstname
+    "#{self.lastname}, #{self.firstname}"
+  end
 end
