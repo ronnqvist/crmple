@@ -1,11 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-  nickname: MyString
-  comments: MyString
+  firstname: 'Paavo'
+  lastname: 'Suominen'
+  nickname: 'paavo'
+  comments: 'test'
 
 two:
-  name: MyString
-  nickname: MyString
-  comments: MyString
+  firstname: 'Matti'
+  lastname: 'Meikäläinen'
+  nickname: 'Test'
+  comments: 'testi'
