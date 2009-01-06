@@ -1,4 +1,7 @@
 <h1><%= t 'people.new' %></h1>
+
+<%= error_messages_for 'person' %>
+
 <% form_for @person do |f| %>
 	<dl>
 		<dt><%= t('people.firstname')%></dt>

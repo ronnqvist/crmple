@@ -22,6 +22,7 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.new(params[:person])
+    @roles = Role.all
     if @person.save
       flash[:notice] = t('people.flash.success')
       redirect_to @person
