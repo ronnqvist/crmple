@@ -11,7 +11,7 @@ class Person < ActiveRecord::Base
   # Assigns user to roles
   def roles=(attributes)
     attributes.each do |id, value|
-      self.roles << Role.find(id)
+      self.roles << Role.find(id) unless value['name'].empty?
     end
   end
   
