@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class RoleTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  
+  def test_should_create_role
+    assert_difference 'Role.count' do
+      role = Role.new(:name => roles(:one).name, :comments => roles(:one).comments)
+      assert role.save
+      assert !role.new_record?
+    end
   end
 end
