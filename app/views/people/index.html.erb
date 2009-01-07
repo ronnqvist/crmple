@@ -1,7 +1,5 @@
-<% content_for :masthead do %>
-	<%= t 'people.title' %>
-<% end %>
-<% content_for :navigation do %>
+<% masthead t('people.title') %>
+<% navigation do %>
 	<li><%= link_to(t('people.new'), new_person_path)%></li>
 <% end %>
 <table>
