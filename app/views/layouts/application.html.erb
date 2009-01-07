@@ -5,13 +5,18 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-	<title>CRMple</title>
-	
+	<title>CRMple: <%= yield :masthead %></title>
+	<%= stylesheet_link_tag 'style' %>
+  <%#= javascript_include_tag :defaults %>
 </head>
 
 <body>
-
-<%=yield%>
-
+<div id="wrapper">
+	<div id="header">
+		<h1 id="masthead"><%= yield :masthead %></h1>
+		<ul id="nav"><%= yield :navigation %></ul>
+	</div>
+	<div id="content"><%=yield%></div>
+</div>
 </body>
 </html>

@@ -1,4 +1,9 @@
-<h1><%= t 'people.new' %></h1>
+<% content_for :masthead do %>
+	<%= t 'people.new' %>
+<% end %>
+<% content_for :navigation do %>
+	<li><%= link_to(t('people.return'), people_path)%></li>
+<% end %>
 
 <%= error_messages_for 'person' %>
 
@@ -19,8 +24,8 @@
          <% end %>
 			</dd>
     <% end %>
-		<dt><%= t('people.coments')%></dt>
+		<dt><%= t('comments')%></dt>
 		<dd><%= f.text_area :comments %></dd>
 	</dl>
-	<%= f.submit t('submit') %>
+	<%= f.submit t('save') %>
 <% end %>

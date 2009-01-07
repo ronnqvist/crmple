@@ -5,6 +5,18 @@ fi:
   people:
     title: "Henkilöt"
     new: "Lisää uusi henkilö"
+    edit: "Muokkaa henkilötiedot"
+    show: "Henkilötiedot"
+    return: "Palaa henkilölistalle"
+    name: "Nimi"
+    firstname: "Etunimi"
+    lastname: "Sukunimi"
+    nickname: "Lempinimi"
+    town: "Kaupunki"
+    roles: "Roolit"
+
+  save: "Tallenna"
+  comments: "Kommentit"
   
   date:
     formats:

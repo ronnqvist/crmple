@@ -2,7 +2,18 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello"
   people:
     title: "People"
     new: "Add new person"
+    edit: "Edit personal information"
+    show: "Personal information"
+    return: "Return to list of people"
+    name: "Name"
+    firstname: "First name"
+    lastname: "Last name"
+    nickname: "Nickname"
+    town: "Town"
+    roles: "Roles"
+
+  save: "Save"
+  comments: "Comments"

@@ -1,5 +1,9 @@
-<h1><%= t 'people.title' %></h1>
-<%= link_to(t('people.new'), new_person_path)%>
+<% content_for :masthead do %>
+	<%= t 'people.title' %>
+<% end %>
+<% content_for :navigation do %>
+	<li><%= link_to(t('people.new'), new_person_path)%></li>
+<% end %>
 <table>
 	<thead>
 		<tr>
