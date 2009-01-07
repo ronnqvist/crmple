@@ -1,0 +1,105 @@
+/* Copyright 2009 Simon Rönnqvist, any CSS-code in this file may not be used in production sites or applications deployed third parties!
+  It's distributed with this application solely for demonstration purposes. */
+body {
+  background: #ddd;
+  font-family:Verdana,Geneva,Arial,Helvetica,sans-serif;
+  font-size:small;
+  margin:0;
+  padding:0;
+}
+#wrapper {
+  margin: 0 1em;
+  position:relative;
+/*  width:760px; */
+  background: white;
+}
+#footer {
+  clear:both;
+}
+.sidebar #maincontent {
+  float:left;
+}
+.sidebar #sidebar {
+  float:right;
+  width: 30%;
+}
+a {
+	color: black;
+}
+table th {
+	color: #555;
+	background: #ddd;
+	padding: 0 1em;
+	text-align: left;
+}
+table td {
+	padding: 0 1em;
+}
+#header {
+	background: no-repeat #555;
+/*	width: 760px;*/
+	color: white;
+	padding: 0;
+/*	min-height:118px;
+/* IE min-height fix
+  	height:auto !important;
+  	height:118px;
+*/
+}
+#header h1 {
+/*	width: 710px; /* 760px - 50px padding */
+/*	height: 55px; /* 118px - 23px navi - 40px padding */
+	margin: 0;
+	padding: 20px 25px;
+  text-align: center;
+}
+#header h1 a {
+/*	display: block;
+	width: 100%;
+	height: 100%;
+	text-indent: -9999em;
+*/
+	margin: 0;
+	padding: 0;
+  color: white;
+  text-decoration: none;
+}
+#header strong {
+  font-weight: normal;
+}
+#header ul#lang {
+	margin: 0;
+	padding: 0 30px 0 0;
+	float: right;
+}
+#header ul#nav {
+	float: none;
+	padding: 0 0 .6em 9px;
+  margin: 0;
+}
+#header ul li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+#header ul a {
+	font-size: 1.2em;
+	line-height: 1.4em;
+	text-decoration: none;
+	background: #ddd;
+  color: #555;
+  margin: 0 1px;
+  padding: 0.3em 0.9em .2em 0.9em;
+}
+#header ul a.active,
+#header ul li a:hover {
+	background: white;
+}
+#content {
+	padding: 1.5em 25px 15px 25px;
+	background: white;
+/*  width: 710px; /* 760px - padding, borders & margins */
+}
+#footer {
+	text-align: center;
+}
