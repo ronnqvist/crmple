@@ -30,6 +30,14 @@ class PersonTest < ActiveSupport::TestCase
     end
   end
   
+  def test_should_assign_roles
+    assert_difference 'Person.count' do
+      person = create_person
+      [roles(:one), roles(:two)].each { |role| person.roles << role }
+      assert_equal 2, person.roles.size
+    end
+  end
+  
   private
   
   def create_person(options = {})
