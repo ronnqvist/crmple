@@ -35,6 +35,10 @@ table th {
 table td {
 	padding: 0 1em;
 }
+dl dt {
+	font-weight: bold;
+	color: #555;
+}
 #header {
 	background: no-repeat #555;
 /*	width: 760px;*/
