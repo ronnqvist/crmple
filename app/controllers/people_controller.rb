@@ -12,7 +12,7 @@ class PeopleController < ApplicationController
   end
 
   def show
-    @person = Person.find(params[:id])
+    @person = Person.find(params[:id], :include => :roles)
   end
 
   def destroy
