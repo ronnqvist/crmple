@@ -13,7 +13,10 @@ en:
     lastname: "Last name"
     nickname: "Nickname"
     town: "Town"
-    roles: "Roles"
+  
+  roles:
+    title: "Roles"
+    empty: "No roles"
 
   save: "Save"
   comments: "Comments"

@@ -1,5 +1,5 @@
 <% masthead t('people.new') %>
-<% content_for :navigation do %>
+<% navigation do %>
 	<li><%= link_to(t('people.return'), people_path)%></li>
 <% end %>
 
@@ -13,15 +13,19 @@
 		<dd><%= f.text_field :lastname %></dd>
 		<dt><%= t('people.nickname')%></dt>
 		<dd><%= f.text_field :nickname %></dd>
-		<dt><%= t('people.roles')%></dt>
-		<% for role in @roles %>
-			<dd>
-         <% fields_for "person[roles][]", role do |roles| %>
+		<dt><%= t('roles.title')%></dt>
+		<% unless @roles.empty? %>
+         <% for role in @roles %>
+         <dd>
+            <% fields_for "person[roles][]", role do |roles| %>
             <%= roles.check_box :name, { :checked => false }, role.name, '' %>
             <%= roles.label :name, role.name %>
+            <% end %>
+         </dd>
          <% end %>
-			</dd>
-    <% end %>
+      <% else %>
+         <%= t('roles.empty') %>
+      <% end %>
 		<dt><%= t('comments')%></dt>
 		<dd><%= f.text_area :comments %></dd>
 	</dl>

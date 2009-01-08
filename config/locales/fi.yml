@@ -13,7 +13,10 @@ fi:
     lastname: "Sukunimi"
     nickname: "Lempinimi"
     town: "Kaupunki"
-    roles: "Roolit"
+    
+  roles:
+    title: "Roolit"
+    empty: "Ei rooleja"
 
   save: "Tallenna"
   comments: "Kommentit"
