@@ -10,9 +10,13 @@
 	<dd><%= @person.lastname %></dd>
 	<dt><%= t('people.nickname')%></dt>
 	<dd><%= @person.nickname %></dd>
-	<dt><%= t('people.roles')%></dt>
-	<% for role in @person.roles %>
-  	<dd><%= role.name %></dd>
+	<dt><%= t('roles.title')%></dt>
+	<% unless @person.roles.empty? %>
+	   <% for role in @person.roles %>
+  	      <dd><%= role.name %></dd>
+	   <% end %>
+	<% else %>
+	   <%= t('roles.empty') %>
 	<% end %>
 	<dt><%= t('comments')%></dt>
 	<dd><%= @person.comments %></dd>
