@@ -15,14 +15,7 @@
 		<dd><%= f.text_field :nickname %></dd>
 		<dt><%= t('roles.title')%></dt>
 		<% unless @roles.empty? %>
-         <% for role in @roles %>
-         <dd>
-            <% fields_for "person[roles][]", role do |roles| %>
-            <%= roles.check_box :name, { :checked => false }, role.name, '' %>
-            <%= roles.label :name, role.name %>
-            <% end %>
-         </dd>
-         <% end %>
+         <%= render :partial => 'role', :collection => @roles %>
       <% else %>
          <%= t('roles.empty') %>
       <% end %>

@@ -9,9 +9,14 @@ class Person < ActiveRecord::Base
   validates_presence_of :firstname, :lastname, :nickname
   
   # Assigns user to roles
-  def roles=(attributes)
-    attributes.each do |id, value|
-      self.roles << Role.find(id) unless value['name'].empty?
+  def roles=(role_attributes)
+    role_attributes.each do |id, attribute|
+      role = Role.find(id)
+      unless attribute['name'].empty?
+        roles << role unless roles.include?(role)
+      else
+        roles.delete(role) if roles.include?(role)
+      end
     end
   end
   

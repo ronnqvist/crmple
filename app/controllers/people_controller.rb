@@ -9,6 +9,8 @@ class PeopleController < ApplicationController
   end
 
   def edit
+    @person = Person.find(params[:id], :include => :roles)
+    @roles = Role.all
   end
 
   def show
@@ -19,6 +21,13 @@ class PeopleController < ApplicationController
   end
 
   def update
+    @person = Person.find(params[:id])
+    if @person.update_attributes(params[:person])
+      flash[:notice] = t('person.updated')
+      redirect_to @person
+    else
+      render :action => 'new'
+    end
   end
 
   def create
