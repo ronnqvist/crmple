@@ -1,16 +1,16 @@
 class PeopleController < ApplicationController
+  before_filter :load_all_roles, :only => [:new, :edit, :create]
+  
   def index
     @people = Person.all(:include => :roles, :order => 'lastname ASC')
   end
   
   def new
     @person = Person.new
-    @roles  = Role.all
   end
 
   def edit
     @person = Person.find(params[:id], :include => :roles)
-    @roles = Role.all
   end
 
   def show
@@ -32,7 +32,6 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.new(params[:person])
-    @roles = Role.all
     if @person.save
       flash[:notice] = t('people.flash.success')
       redirect_to @person
@@ -41,5 +40,10 @@ class PeopleController < ApplicationController
       render :action => 'new'
     end
   end
-
+  
+  private
+  
+  def load_all_roles
+    @roles ||= Role.all
+  end
 end
