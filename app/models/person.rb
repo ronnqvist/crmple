@@ -1,7 +1,7 @@
 class Person < ActiveRecord::Base
   extend ActiveSupport::Memoizable
   
-  has_many :role_assignments
+  has_many :role_assignments, :dependent => :delete_all
   has_many :roles, :through => :role_assignments
   has_many :addresses
   has_many :phones
@@ -9,7 +9,7 @@ class Person < ActiveRecord::Base
   
   # User validations
   validates_presence_of :firstname, :lastname, :nickname
-  validates_associated :emails
+  validates_associated :emails, :phones
   
   # Assigns role to user
   def roles=(role_attributes)
