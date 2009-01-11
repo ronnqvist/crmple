@@ -17,7 +17,7 @@
 		<% unless @roles.empty? %>
          <%= render :partial => 'role', :collection => @roles %>
       <% else %>
-         <%= t('roles.empty') %>
+         <dd><%= t('roles.empty') %></dd>
       <% end %>
 		<dt><%= t('comments')%></dt>
 		<dd><%= f.text_area :comments %></dd>
