@@ -23,21 +23,29 @@ class Person < ActiveRecord::Base
     end
   end
   
-  def new_email_attributes=(email_attributes)
-    email_attributes.each do |attributes|
-      emails.build(attributes)
-    end
-  end
-  
-  def existing_email_attributes=(email_attributes)
-    emails.reject(&:new_record?).each do |email|
-      attributes = email_attributes[email.id.to_s]
-      if attributes
-        email.attributes = attributes
-        email.save
-      else
-        emails.delete(email)
-      end
+  # Generates called methods automatically.
+  class_eval do
+    ['emails', 'phones'].each do |association|
+      variable = association.singularize
+      eval <<-EOM
+        def new_#{variable}_attributes=(#{variable}_attributes)
+          #{variable}_attributes.each do |attributes|
+            #{association}.build(attributes)
+          end
+        end
+        
+        def existing_#{variable}_attributes=(#{variable}_attributes)
+          #{association}.reject(&:new_record?).each do |#{variable}|
+            attributes = #{variable}_attributes[#{variable}.id.to_s]
+            if attributes
+              #{variable}.attributes = attributes
+              #{variable}.save
+            else
+              #{association}.delete(#{variable})
+            end
+          end
+        end
+      EOM
     end
   end
   
