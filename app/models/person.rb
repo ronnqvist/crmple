@@ -9,7 +9,6 @@ class Person < ActiveRecord::Base
   
   # User validations
   validates_presence_of :firstname, :lastname, :nickname
-  validates_associated :emails, :phones
   
   # Assigns role to user
   def roles=(role_attributes)

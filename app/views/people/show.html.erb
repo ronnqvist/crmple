@@ -10,14 +10,32 @@
 	<dd><%= @person.lastname %></dd>
 	<dt><%= t('people.nickname')%></dt>
 	<dd><%= @person.nickname %></dd>
+
 	<dt><%= t('roles.title')%></dt>
 	<% unless @person.roles.empty? %>
 	   <% for role in @person.roles %>
   	      <dd><%= role.name %></dd>
 	   <% end %>
 	<% else %>
-	   <dd><%= t('roles.empty') %></dd>
+	  <dd><%= t('roles.empty') %></dd>
 	<% end %>
-	<dt><%= t('comments')%></dt>
-	<dd><%= @person.comments %></dd>
+
+	<% unless @person.emails.empty? # Doesn't work %>
+		<dt><%= t('people.emails') %></dt>
+		<% for email in @person.emails %>
+  		<dd><%= email.email %></dd>
+		<% end %>
+	<% end %>
+
+	<% unless @person.phones.empty? # Doesn't work %>
+		<dt><%= t('people.phone_numbers') %></dt>
+		<% for phone in @person.phones %>
+  		<dd><%= phone.number %></dd>
+		<% end %>
+	<% end %>
+
+	<% unless @person.comments.empty? %>
+		<dt><%= t('comments') %></dt>
+  	<dd><%= @person.comments %></dd>
+	<% end %>
 </dl>
