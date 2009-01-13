@@ -1,0 +1,6 @@
+<% @email = email %>
+<%= error_messages_for :email %>
+
+<% fields_for_record email, 'email' do |email_form| %>
+   <dd><%= email_form.text_field :email %></dd>
+<% end %>

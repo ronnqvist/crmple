@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  before_filter :load_all_roles, :only => [:new, :edit, :create]
+  before_filter :load_all_roles, :only => [:new, :edit, :create, :update]
   
   def index
     @people = Person.all(:include => :roles, :order => 'lastname ASC')
@@ -7,6 +7,8 @@ class PeopleController < ApplicationController
   
   def new
     @person = Person.new
+    @person.emails.build
+    @person.phones.build
   end
 
   def edit
@@ -26,7 +28,7 @@ class PeopleController < ApplicationController
       flash[:notice] = t('person.updated')
       redirect_to @person
     else
-      render :action => 'new'
+      render :action => 'edit'
     end
   end
 

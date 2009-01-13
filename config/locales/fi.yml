@@ -13,6 +13,8 @@ fi:
     lastname: "Sukunimi"
     nickname: "Lempinimi"
     town: "Kaupunki"
+    emails: "Sähköpostit"
+    phone_numbers: "Puhelinnumerot"
     
   roles:
     title: "Roolit"
@@ -139,3 +141,15 @@ fi:
         less_than_or_equal_to: "täytyy olla pienempi tai yhtä suuri kuin {{count}}"
         odd: "täytyy olla pariton"
         even: "täytyy olla parillinen"
+    models:
+      person: "henkilö"
+      email: "sähköposti"
+      role: "rooli"
+    attributes:
+      person:
+        firstname: "Etunimi"
+        lastname: "Sukunimi"
+        nickname: "Lempinimi"
+        emails: "Sähköpostit"
+      email:
+        email: "Sähköposti"

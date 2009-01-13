@@ -13,6 +13,8 @@ en:
     lastname: "Last name"
     nickname: "Nickname"
     town: "Town"
+    emails: "Emails"
+    phone_numbers: "Phone numbers"
   
   roles:
     title: "Roles"

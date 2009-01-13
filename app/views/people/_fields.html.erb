@@ -1,0 +1,10 @@
+<dt><%= t('roles.title')%></dt>
+<% unless @roles.empty? %>
+   <%= render :partial => 'role', :collection => @roles %>
+<% else %>
+   <dd><%= t('roles.empty') %></dd>
+<% end %>
+<dt><%= t('people.emails') %></dt>
+   <%= render :partial => 'email', :collection => @person.emails %>
+<dt><%= t('people.phone_numbers') %></dt>
+   <%= render :partial => 'phone', :collection => @person.phones %>

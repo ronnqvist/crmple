@@ -3,9 +3,9 @@
 	<li><%= link_to(t('people.return'), people_path)%></li>
 <% end %>
 
-<%= error_messages_for 'person' %>
+<%= error_messages_for :person %>
 
-<% form_for @person do |f| %>
+<% form_for :person, :url => people_path do |f| %>
 	<dl>
 		<dt><%= t('people.firstname')%></dt>
 		<dd><%= f.text_field :firstname %></dd>
@@ -13,12 +13,7 @@
 		<dd><%= f.text_field :lastname %></dd>
 		<dt><%= t('people.nickname')%></dt>
 		<dd><%= f.text_field :nickname %></dd>
-		<dt><%= t('roles.title')%></dt>
-		<% unless @roles.empty? %>
-         <%= render :partial => 'role', :collection => @roles %>
-      <% else %>
-         <dd><%= t('roles.empty') %></dd>
-      <% end %>
+    <%= render :partial => 'fields', :locals => { :f => f } %>
 		<dt><%= t('comments')%></dt>
 		<dd><%= f.text_area :comments %></dd>
 	</dl>
