@@ -8,3 +8,5 @@
    <%= render :partial => 'email', :collection => @person.emails %>
 <dt><%= t('people.phone_numbers') %></dt>
    <%= render :partial => 'phone', :collection => @person.phones %>
+<dt><%= t('people.addresses.title') %></dt>
+   <%= render :partial => 'address', :collection => @person.addresses %>

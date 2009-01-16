@@ -15,7 +15,11 @@
 		<tr>
     	<td><%= link_to(person.lastname_firstname, person) %></td>
 			<td><%= person.nickname %></td>
-			<td><%#= address.post_office %></td>
+			<td>
+				<% for address in person.addresses %>
+					<%= address.post_office %>
+				<% end %>
+			</td>
 			<td>
 				<% for role in person.roles %>
 			  	<%= role.name %>

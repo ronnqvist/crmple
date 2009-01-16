@@ -9,6 +9,7 @@ class PeopleController < ApplicationController
     @person = Person.new
     @person.emails.build
     @person.phones.build
+    @person.addresses.build
   end
 
   def edit

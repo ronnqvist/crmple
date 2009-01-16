@@ -24,7 +24,7 @@ class Person < ActiveRecord::Base
   
   # Generates called methods automatically.
   class_eval do
-    ['emails', 'phones'].each do |association|
+    ['emails', 'phones', 'addresses'].each do |association|
       variable = association.singularize
       eval <<-EOM
         def new_#{variable}_attributes=(#{variable}_attributes)

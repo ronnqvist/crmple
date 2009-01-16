@@ -15,6 +15,13 @@ fi:
     town: "Kaupunki"
     emails: "Sähköpostit"
     phone_numbers: "Puhelinnumerot"
+    addresses:
+      title: "Osoitteet"
+      street: "Katuosoite"
+      country_code: "Maakoodi (esim. FI)"
+      postal_code: "Postinumero"
+      post_office: "Postitoimisto"
+      country: "Maa"
     
   roles:
     title: "Roolit"

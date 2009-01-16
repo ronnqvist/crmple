@@ -34,6 +34,21 @@
 		<% end %>
 	<% end %>
 
+	<% unless @person.addresses.empty? # Doesn't work' %>
+		<dt><%= t('people.addresses.title') %></dt>
+		<dd>
+			<dl>
+				<% for address in @person.addresses %>
+					<dd>
+						<%= address.street %><br />
+						<%= address.post_office_line %><br />
+						<%= address.country %>
+					</dd>
+				</dl>
+			</dd>
+		<% end %>
+	<% end %>
+
 	<% unless @person.comments.empty? %>
 		<dt><%= t('comments') %></dt>
   	<dd><%= @person.comments %></dd>
