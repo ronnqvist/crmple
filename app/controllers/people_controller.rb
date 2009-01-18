@@ -1,5 +1,6 @@
 class PeopleController < ApplicationController
   before_filter :load_all_roles, :only => [:new, :edit, :create, :update]
+  before_filter :find_person_with_includes, :only => [:edit, :show]
   
   def index
     @people = Person.all(:include => :roles, :order => 'lastname ASC')
@@ -13,11 +14,9 @@ class PeopleController < ApplicationController
   end
 
   def edit
-    @person = Person.find(params[:id], :include => :roles)
   end
 
   def show
-    @person = Person.find(params[:id], :include => :roles)
   end
 
   def destroy
@@ -55,5 +54,9 @@ class PeopleController < ApplicationController
   
   def load_all_roles
     @roles ||= Role.all
+  end
+  
+  def find_person_with_includes
+    @person ||= Person.find(params[:id], :include => [:roles, :phones, :emails, :addresses])
   end
 end
