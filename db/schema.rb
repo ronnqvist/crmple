@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090105171036) do
+ActiveRecord::Schema.define(:version => 20090118173850) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "person_id"
@@ -28,6 +28,11 @@ ActiveRecord::Schema.define(:version => 20090105171036) do
     t.string   "type"
     t.boolean  "receive_newsletters"
     t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "newsletters", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
