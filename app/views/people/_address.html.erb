@@ -1,0 +1,19 @@
+<% @address = address %>
+<%= error_messages_for :address %>
+
+<dd>
+	<dl>
+		<% fields_for_record address, 'address' do |address_form| %>
+			<dt><%= t('people.addresses.street') %></dt>
+			<dd><%= address_form.text_field :street %></dd>
+			<dt><%= t('people.addresses.country_code') %></dt>
+			<dd><%= address_form.text_field :country_code %></dd>
+			<dt><%= t('people.addresses.postal_code') %></dt>
+			<dd><%= address_form.text_field :postal_code %></dd>
+			<dt><%= t('people.addresses.post_office') %></dt>
+			<dd><%= address_form.text_field :post_office %></dd>
+			<dt><%= t('people.addresses.country') %></dt>
+			<dd><%= address_form.text_field :country %></dd>
+		<% end %>
+	</dl>
+</dd>

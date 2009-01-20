@@ -1,0 +1,16 @@
+<% masthead t('newsletters.title') %>
+<% navigation do %>
+	<li><%= link_to(t('people.return'), people_path)%></li>
+<% end %>
+
+<% remote_form_for @roles, :url => newsletters_path do |f| %>
+	<dd>
+    <%= f.check_box :name %>
+    <%= f.label :name %>
+		<%= f.submit 'Tallenna' %>
+	</dd>
+<% end %>
+
+<div id="generated_list">
+	
+</div>
