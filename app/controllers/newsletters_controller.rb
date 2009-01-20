@@ -2,6 +2,15 @@ class NewslettersController < ApplicationController
   def index
     @roles = Role.all
   end
+  
+  def list
+    @list = Newsletter.subscribers(params[:role])
+    
+    respond_to do |format|
+      format.html # /newsletters/list
+      format.js # list.js.rjs
+    end
+  end
 
   def new
   end
@@ -20,5 +29,4 @@ class NewslettersController < ApplicationController
 
   def destroy
   end
-
 end

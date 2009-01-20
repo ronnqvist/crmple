@@ -4,6 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :people
   
   map.resources :newsletters, :only => :index
+  map.list_newsletters 'newsletters/list', :controller => 'newsletters', :action => 'list'
   
   # The priority is based upon order of creation: first created -> highest priority.
 

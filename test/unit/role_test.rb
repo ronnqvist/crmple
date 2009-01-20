@@ -9,4 +9,11 @@ class RoleTest < ActiveSupport::TestCase
       assert !role.new_record?
     end
   end
+  
+  def test_should_destroy_role
+    assert_difference('Role.count', -1) do
+      role = roles(:one)
+      assert role.destroy
+    end
+  end
 end
