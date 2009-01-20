@@ -3,11 +3,13 @@
 	<li><%= link_to(t('people.return'), people_path)%></li>
 <% end %>
 
-<% remote_form_for @roles, :url => newsletters_path do |f| %>
+<% form_remote_tag :url => list_newsletters_url do %>
 	<dd>
-    <%= f.check_box :name %>
-    <%= f.label :name %>
-		<%= f.submit 'Tallenna' %>
+	   <% for role in @roles %>
+	      <%= label 'role', role.name, role.name %>
+	      <%= check_box 'role', role.name %>
+	   <% end %>
+		<%= submit_tag 'Tallenna' %>
 	</dd>
 <% end %>
 
