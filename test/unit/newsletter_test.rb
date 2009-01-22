@@ -10,7 +10,7 @@ class NewsletterTest < ActiveSupport::TestCase
   
   def test_should_remove_duplicated_emails
     # Empty strings for testing purpose
-    roles = [roles(:one), roles(:two), "", ""].map { |role| role.id.to_s }
+    roles = [roles(:one).id.to_s, roles(:two).id.to_s, "", ""]
     emails = Newsletter.subscribers(roles)
     assert_equal 'paavo.suominen@gmail.com, matti.meikalainen@gmail.com', emails
   end

@@ -1,1 +1,1 @@
-page.replace_html 'generated_list', @list
+page.replace_html 'generated_list', @list.empty? ? "No emails for role" : @list

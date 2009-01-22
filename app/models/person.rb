@@ -66,8 +66,8 @@ class Person < ActiveRecord::Base
   
   def self.subscribers
     self.all(:include => :emails).inject([]) do |emails, person|
-      emails = person.emails.for_newsletter
-      emails
+      emails << person.emails.for_newsletter
+      emails.flatten
     end
   end
   
