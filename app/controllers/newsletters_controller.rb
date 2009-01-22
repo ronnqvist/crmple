@@ -4,7 +4,7 @@ class NewslettersController < ApplicationController
   end
   
   def list
-    @list = Newsletter.subscribers(params[:role])
+    @list = Newsletter.subscribers(params[:selected_roles])
     
     respond_to do |format|
       format.html # /newsletters/list

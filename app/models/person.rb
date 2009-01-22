@@ -60,5 +60,16 @@ class Person < ActiveRecord::Base
     "#{self.lastname}, #{self.firstname}"
   end
   
+  def newsletter_emails
+    emails.for_newsletter.map(&:email)
+  end
+  
+  def self.subscribers
+    self.all(:include => :emails).inject([]) do |emails, person|
+      emails = person.emails.for_newsletter
+      emails
+    end
+  end
+  
   memoize :has_role?, :full_name, :lastname_firstname
 end

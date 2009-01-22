@@ -1,9 +1,10 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  type: MyString
-  email: MyString
-
-two:
-  type: MyString
-  email: MyString
+paavo_email:
+  person: paavo
+  email: "paavo.suominen@gmail.com"
+  receive_newsletters: true
+matti_email:
+  person: matti
+  email: "matti.meikalainen@gmail.com"
+  receive_newsletters: true

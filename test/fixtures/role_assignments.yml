@@ -5,3 +5,12 @@
 #
 # two:
 #   column: value
+one:
+  role: one
+  person: paavo
+two:
+  role: two
+  person: matti
+three:
+  role: two
+  person: paavo

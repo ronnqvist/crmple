@@ -1,12 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+paavo:
   firstname: 'Paavo'
   lastname: 'Suominen'
   nickname: 'paavo'
   comments: 'test'
-
-two:
+matti:
   firstname: 'Matti'
   lastname: 'Meikäläinen'
   nickname: 'Test'

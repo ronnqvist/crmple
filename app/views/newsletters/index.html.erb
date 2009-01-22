@@ -6,8 +6,8 @@
 <% form_remote_tag :url => list_newsletters_url do %>
 	<dd>
 	   <% for role in @roles %>
-	      <%= label 'role', role.name, role.name %>
-	      <%= check_box 'role', role.name %>
+	      <%= label "role", role.id, role.name %>
+	      <%= check_box 'selected_roles', nil, { :id => "role_#{role.id}" }, role.id, nil %>
 	   <% end %>
 	</dd>
 	<%= submit_tag 'Tallenna' %>

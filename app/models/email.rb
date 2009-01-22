@@ -6,4 +6,8 @@ class Email < ActiveRecord::Base
 
                           # Should also accept empty
                           # Doesn't show any message when editing, only when creating new
+  
+  def self.for_newsletter
+    find(:all, :conditions => ['receive_newsletters = ?', true])
+  end
 end
