@@ -14,4 +14,10 @@ class NewsletterTest < ActiveSupport::TestCase
     emails = Newsletter.subscribers(roles)
     assert_equal 'paavo.suominen@gmail.com, matti.meikalainen@gmail.com', emails
   end
+  
+  def test_should_add_separator
+    roles = [roles(:one).id.to_s, roles(:two).id.to_s, "", ""]
+    emails = Newsletter.subscribers(roles, :separator => '; ')
+    assert_equal 'paavo.suominen@gmail.com; matti.meikalainen@gmail.com', emails
+  end
 end
