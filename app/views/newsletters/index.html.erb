@@ -1,17 +1,19 @@
-<% masthead t('newsletters.title') %>
+<% masthead t('newsletters.new') #May be changed to newsletters.title if newsletter management feature is implemented %>
 <% navigation do %>
 	<li><%= link_to(t('people.return'), people_path)%></li>
 <% end %>
 
 <% form_remote_tag :url => list_newsletters_url do %>
-	<dd>
-	   <% for role in @roles %>
-	      <%= label "role", role.id, role.name %>
+	<dl>
+		<dt><%= t('newsletters.send_to_roles') %></dt>
+	  <% for role in @roles %>
+			<dd>
 	      <%= check_box 'selected_roles', nil, { :id => "role_#{role.id}" }, role.id, nil %>
-	   <% end %>
-	</dd>
+	   		<%= label "role", role.id, role.name %>
+			</dd>
+	  <% end %>
+	</dl>
 	<%= submit_tag t('submit') %>
-	
 <% end %>
 
 <div id="generated_list">

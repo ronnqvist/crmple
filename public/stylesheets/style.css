@@ -107,3 +107,12 @@ dl dt {
 #footer {
 	text-align: center;
 }
+
+#generated_list {
+	margin-top: 1em;
+}
+
+#generated_list #emails {
+	border: solid #ddd 3px;
+	padding: 1em;
+}

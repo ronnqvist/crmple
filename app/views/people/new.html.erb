@@ -6,7 +6,7 @@
 <%= error_messages_for :person %>
 
 <% form_for :person, :url => people_path do |f| %>
-<%# Removed for testing purposes   = f.hidden_field :verified, :value => true %>
+<%= f.hidden_field :verified, :value => true %>
 <%# Make common partial for new and edit %>
 	<dl>
 		<dt><%= t('people.firstname')%></dt>

@@ -27,7 +27,14 @@ fi:
     title: "Roolit"
     empty: "Ei rooleja"
 
+  newsletters:
+    new: "Lähetä tiedote"
+    send_to_roles: "Lähetä henkilöille joilla on seuraavat roolit:"
+    nobody: "Ei löydy henkilöitä joilla olisi tätä roolia ja tahtoisivat rooliin liittyää s-postia."
+    copy_emails: "Kopioi ruudun sisältöä, ja liitä sähköpostiohjelmasi piilokopio (tai Bcc) kenttään (ei tavalliseen vastaanottaja kentään):"
+
   save: "Tallenna"
+  submit: "Lähetä"
   comments: "Kommentit"
   
   date:

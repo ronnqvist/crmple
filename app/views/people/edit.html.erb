@@ -7,6 +7,7 @@
 
 <% form_for :person, :url => person_path(@person), :html => { :method => 'put' } do |f| %>
 <%= f.hidden_field :verified, :value => true %>
+<%# Make common partial for new and edit %>
 	<dl>
 		<dt><%= t('people.firstname')%></dt>
 		<dd><%= f.text_field :firstname %></dd>
