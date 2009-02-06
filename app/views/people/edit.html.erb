@@ -6,6 +6,7 @@
 <%= error_messages_for :person %>
 
 <% form_for :person, :url => person_path(@person), :html => { :method => 'put' } do |f| %>
+<%= f.hidden_field :verified, :value => true %>
 	<dl>
 		<dt><%= t('people.firstname')%></dt>
 		<dd><%= f.text_field :firstname %></dd>

@@ -1,5 +1,6 @@
 <% masthead t('people.title') %>
 <% navigation do %>
+  <li><%= link_to(t('newsletters.new'), newsletters_path)%></li>
 	<li><%= link_to(t('people.new'), new_person_path)%></li>
 <% end %>
 <table>

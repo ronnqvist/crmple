@@ -4,7 +4,7 @@ class CreateEmails < ActiveRecord::Migration
       t.references :person
       
       t.string :type
-      t.boolean :receive_newsletters
+      t.boolean :receive_newsletters, :default => true
       t.string :email
 
       t.timestamps
