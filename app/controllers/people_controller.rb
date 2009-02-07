@@ -1,4 +1,8 @@
 class PeopleController < ApplicationController
+  before_filter :login_required
+  #Needs to be: before_filter :login_required , :except => [:something]
+  #once we start using registration from external pages.
+
   before_filter :load_all_roles, :only => [:new, :edit, :create, :update]
   before_filter :find_person_with_includes, :only => [:edit, :show]
   
