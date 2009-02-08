@@ -1,4 +1,6 @@
 class RolesController < ApplicationController
+  skip_before_filter :verify_authenticity_token
+  
   # GET /roles
   # GET /roles.xml
   def index
@@ -7,6 +9,7 @@ class RolesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @roles }
+      format.json { render :json => @roles }
     end
   end
 
@@ -47,9 +50,11 @@ class RolesController < ApplicationController
         flash[:notice] = 'Role was successfully created.'
         format.html { redirect_to(@role) }
         format.xml  { render :xml => @role, :status => :created, :location => @role }
+        format.json { render :json => @role, :status => :created, :location => @role }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @role.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @role.errors, :status => :unprocessable_entity }
       end
     end
   end

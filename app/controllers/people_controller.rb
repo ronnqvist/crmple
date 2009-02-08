@@ -4,6 +4,11 @@ class PeopleController < ApplicationController
   
   def index
     @people = Person.all(:include => :roles, :order => 'lastname ASC')
+    
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @people }
+    end
   end
   
   def new
@@ -41,12 +46,17 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.new(params[:person])
-    if @person.save
-      flash[:notice] = t('people.flash.success')
-      redirect_to @person
-    else
-      flash[:error] = t('people.flash.error')
-      render :action => 'new'
+    
+    respond_to do |format|
+      if @person.save
+        flash[:notice] = t('people.flash.success')
+        format.html { redirect_to @person }
+        format.xml { render :xml => @role, :status => :created, :location => @role }
+      else
+        flash[:error] = t('people.flash.error')
+        format.html { render :action => 'new' }
+        format.xml  { render :xml => @role.errors, :status => :unprocessable_entity }
+      end
     end
   end
   
