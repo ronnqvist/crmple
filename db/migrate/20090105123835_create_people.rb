@@ -4,6 +4,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string :firstname
       t.string :lastname
       t.string :nickname
+      t.boolean :verified, :default => false
       t.string :comments
 
       t.timestamps

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090118173850) do
+ActiveRecord::Schema.define(:version => 20090207004641) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "person_id"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20090118173850) do
   create_table "emails", :force => true do |t|
     t.integer  "person_id"
     t.string   "type"
-    t.boolean  "receive_newsletters"
+    t.boolean  "receive_newsletters", :default => true
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20090118173850) do
     t.string   "firstname"
     t.string   "lastname"
     t.string   "nickname"
+    t.boolean  "verified",   :default => false
     t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -67,5 +68,19 @@ ActiveRecord::Schema.define(:version => 20090118173850) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "login",                     :limit => 40
+    t.string   "name",                      :limit => 100, :default => ""
+    t.string   "email",                     :limit => 100
+    t.string   "crypted_password",          :limit => 40
+    t.string   "salt",                      :limit => 40
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "remember_token",            :limit => 40
+    t.datetime "remember_token_expires_at"
+  end
+
+  add_index "users", ["login"], :name => "index_users_on_login", :unique => true
 
 end

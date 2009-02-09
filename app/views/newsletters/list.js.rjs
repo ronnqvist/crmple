@@ -1,1 +1,5 @@
-page.replace_html 'generated_list', @list.empty? ? "No emails for role" : @list
+page.replace_html 'generated_list', @list.empty? ? t('newsletters.nobody') : t('newsletters.copy_emails') + '<div id="emails">' + @list + '</div>'
+#Suggested improvements:
+#  - Make different message for plural and signular.
+#  - Show list of people who belong to a sertain role, but are not willing to receieve newsletters by e-mail.
+#  - Make partial with markup separately for e-mail list.
