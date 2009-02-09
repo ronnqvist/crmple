@@ -5,4 +5,4 @@ doc/api
 doc/app
 db/*.sqlite3
 config/database.yml
-config/initializers/site_keys.rb
+#config/initializers/site_keys.rb
