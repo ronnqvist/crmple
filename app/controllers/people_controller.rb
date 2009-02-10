@@ -20,6 +20,11 @@ class PeopleController < ApplicationController
     @person.emails.build
     @person.phones.build
     @person.addresses.build
+    
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml # new.xml.builder
+    end
   end
 
   def edit
@@ -55,11 +60,11 @@ class PeopleController < ApplicationController
       if @person.save
         flash[:notice] = t('people.flash.success')
         format.html { redirect_to @person }
-        format.xml { render :xml => @role, :status => :created, :location => @role }
+        format.xml { render :xml => @person, :status => :created, :location => @person }
       else
         flash[:error] = t('people.flash.error')
         format.html { render :action => 'new' }
-        format.xml  { render :xml => @role.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @person.errors, :status => :unprocessable_entity }
       end
     end
   end

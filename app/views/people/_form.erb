@@ -1,0 +1,12 @@
+<%= form.hidden_field :verified, :value => true %>
+<dl>
+	<dt><%= t('people.firstname')%></dt>
+	<dd><%= form.text_field :firstname %></dd>
+	<dt><%= t('people.lastname')%></dt>
+	<dd><%= form.text_field :lastname %></dd>
+	<dt><%= t('people.nickname')%></dt>
+	<dd><%= form.text_field :nickname %></dd>
+ <%= render :partial => 'fields', :locals => { :f => form } %>
+	<dt><%= t('comments')%></dt>
+	<dd><%= form.text_area :comments %></dd>
+</dl>

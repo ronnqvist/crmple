@@ -87,4 +87,10 @@ class RolesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def form
+    respond_to do |format|
+      format.xml # form.xml.builder
+    end
+  end
 end
