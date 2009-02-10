@@ -13,8 +13,11 @@ fi:
     lastname: "Sukunimi"
     nickname: "Lempinimi"
     town: "Kaupunki"
-    emails: "Sähköpostit"
-    phone_numbers: "Puhelinnumerot"
+# Singular until feature for multiple email and phone_numbers implemented in UI.
+    emails: "Sähköposti"
+    phone_numbers: "Puhelinnumero"
+#    emails: "Sähköpostit"
+#    phone_numbers: "Puhelinnumerot"
     addresses:
       title: "Osoitteet"
       street: "Katuosoite"
