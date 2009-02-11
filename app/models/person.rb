@@ -6,6 +6,7 @@ class Person < ActiveRecord::Base
   has_many :addresses
   has_many :phones
   has_many :emails
+  has_many :payments
   
   # User validations
   validates_presence_of :firstname, :lastname, :nickname

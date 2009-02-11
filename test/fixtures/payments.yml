@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  amount: 1.5
+  payed: 2009-02-11
+  comments: MyString
+
+two:
+  amount: 1.5
+  payed: 2009-02-11
+  comments: MyString
