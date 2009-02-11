@@ -13,13 +13,15 @@ fi:
     lastname: "Sukunimi"
     nickname: "Lempinimi"
     town: "Kaupunki"
-# Singular until feature for multiple email and phone_numbers implemented in UI.
+    approved_membership: "Hyväksytty jäseneksi"
+# Singular until feature for multiple email, phone_numbers and addresses implemented in UI.
     emails: "Sähköposti"
     phone_numbers: "Puhelinnumero"
 #    emails: "Sähköpostit"
 #    phone_numbers: "Puhelinnumerot"
     addresses:
-      title: "Osoitteet"
+      title: "Osoite"
+#      title: "Osoitteet"
       street: "Katuosoite"
       country_code: "Maakoodi (esim. FI)"
       postal_code: "Postinumero"
