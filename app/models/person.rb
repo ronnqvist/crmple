@@ -8,6 +8,8 @@ class Person < ActiveRecord::Base
   has_many :emails
   has_many :payments
   
+  has_one :user
+  
   # User validations
   validates_presence_of :firstname, :lastname, :nickname
   

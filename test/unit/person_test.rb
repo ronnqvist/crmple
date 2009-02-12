@@ -38,6 +38,25 @@ class PersonTest < ActiveSupport::TestCase
     end
   end
   
+  def test_should_not_create_more_than_one_user
+    person = create_person
+    assert_difference 'User.count' do
+      assert_nil person.user
+      user = person.create_user(:login => 'simo', :email => 'simo@gmail.com',
+                                :password => 'terve123', :password_confirmation => 'terve123', 
+                                :name => 'simo').save!
+      assert_not_nil person.user
+      assert_equal person.id, person.user.person_id
+    end
+    assert_no_difference 'User.count' do
+      person.create_user(:login => 'matti', :email => 'matti@gmail.com',
+                         :password => 'terve1232', :password_confirmation => 'terve1232', 
+                         :name => 'matti').save!
+      assert_not_nil person.user
+      assert_equal person.id, person.user.person_id
+    end
+  end
+  
   private
   
   def create_person(options = {})

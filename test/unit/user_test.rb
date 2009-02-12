@@ -8,7 +8,7 @@ class UserTest < ActiveSupport::TestCase
 
   def test_should_create_user
     assert_difference 'User.count' do
-      user = create_user
+      user = create_user(:person_id => people(:paavo).id)
       assert !user.new_record?, "#{user.errors.full_messages.to_sentence}"
     end
   end

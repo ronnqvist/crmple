@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   include Authentication
   include Authentication::ByPassword
   include Authentication::ByCookieToken
+  
+  belongs_to :person
 
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40
@@ -17,6 +19,8 @@ class User < ActiveRecord::Base
   validates_length_of       :email,    :within => 6..100 #r@a.wk
   validates_uniqueness_of   :email
   validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
+  
+  validates_uniqueness_of :person_id
 
   before_create :make_activation_code 
 
