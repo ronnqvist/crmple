@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090211222805) do
+ActiveRecord::Schema.define(:version => 20090212221325) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "person_id"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20090211222805) do
 
   create_table "roles", :force => true do |t|
     t.string   "name"
+    t.boolean  "selfgiven"
     t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"

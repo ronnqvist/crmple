@@ -3,12 +3,14 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Selfgiven</th>
     <th>Comments</th>
   </tr>
 
 <% for role in @roles %>
   <tr>
     <td><%=h role.name %></td>
+    <td><%=h role.selfgiven %></td>
     <td><%=h role.comments %></td>
     <td><%= link_to 'Show', role %></td>
     <td><%= link_to 'Edit', edit_role_path(role) %></td>

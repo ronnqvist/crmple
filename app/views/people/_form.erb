@@ -7,6 +7,13 @@
 	<dt><%= t('people.nickname')%></dt>
 	<dd><%= form.text_field :nickname %></dd>
  <%= render :partial => 'fields', :locals => { :f => form } %>
+	<dt><%= t('people.approved_membership')%></dt>
+	<dd><%= form.date_select :approved_membership,
+												:order => [:day,:month,:year],
+												:include_blank => true,
+												:start_year => Time.now.year,
+												:end_year => 1995
+												%></dd>
 	<dt><%= t('comments')%></dt>
 	<dd><%= form.text_area :comments %></dd>
 </dl>

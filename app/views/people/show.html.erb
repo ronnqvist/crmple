@@ -49,6 +49,11 @@
 		<% end %>
 	<% end %>
 
+	<% unless @person.approved_membership.to_s == '' %>
+		<dt><%= t('people.approved_membership') %></dt>
+  	<dd><%= @person.approved_membership %></dd>
+	<% end %>
+
 	<% unless @person.comments.empty? %>
 		<dt><%= t('comments') %></dt>
   	<dd><%= @person.comments %></dd>

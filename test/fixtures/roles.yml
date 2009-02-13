@@ -1,8 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: "kiinnostunut"
-  comments: "kiinnostunut rooli"
+  name: MyString
+  selfgiven: false
+  comments: MyString
+
 two:
-  name: "tylsistynyt"
-  comments: "tylsistynyt rool"
+  name: MyString
+  selfgiven: false
+  comments: MyString
