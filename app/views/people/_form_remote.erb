@@ -1,4 +1,3 @@
-<%= form.hidden_field :verified, :value => true %>
 <dl>
 	<dt><%= t('people.firstname')%></dt>
 	<dd><%= form.text_field :firstname %></dd>
@@ -7,3 +6,7 @@
 	<dt><%= t('people.emails') %></dt>
 	   <%= render :partial => 'email', :collection => @person.emails %>
 </dl>
+
+<%= form.hidden_field :nickname, '' %>
+<%= form.hidden_field :approved_membership, '' %>
+<%= form.hidden_field :comments, '' %>
