@@ -7,6 +7,6 @@
 	   <%= render :partial => 'email', :collection => @person.emails %>
 </dl>
 
-<%= form.hidden_field :nickname, '' %>
-<%= form.hidden_field :approved_membership, '' %>
-<%= form.hidden_field :comments, '' %>
+<%= form.hidden_field :nickname, :value => '' %>
+<%= form.hidden_field :approved_membership, :value => '' %>
+<%= form.hidden_field :comments, :value => '' %>
