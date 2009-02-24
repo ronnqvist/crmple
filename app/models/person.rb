@@ -11,7 +11,7 @@ class Person < ActiveRecord::Base
   has_one :user
   
   # User validations
-  validates_presence_of :firstname, :lastname, :nickname
+  validates_presence_of :firstname, :lastname
   
   # Assigns role to user
   def roles=(role_attributes)
