@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  before_filter :login_required
+ # before_filter :login_required
   #Needs to be: before_filter :login_required , :except => [:something]
   #once we start using registration from external pages.
 

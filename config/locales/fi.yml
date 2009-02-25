@@ -27,6 +27,8 @@ fi:
       postal_code: "Postinumero"
       post_office: "Postitoimisto"
       country: "Maa"
+    email:
+      not_exist: "osoitetta ei ole olemassa kenelläkään henkilöllä"
     
   roles:
     title: "Roolit"
@@ -164,6 +166,7 @@ fi:
       person: "henkilö"
       email: "sähköposti"
       role: "rooli"
+      user: "käyttäjä"
     attributes:
       person:
         firstname: "Etunimi"

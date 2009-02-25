@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resource :session
 
-  map.resources :people
+  map.resources :people, :has_one => :user
   
   map.resources :newsletters, :only => :index
   map.list_newsletters 'newsletters/list', :controller => 'newsletters', :action => 'list'

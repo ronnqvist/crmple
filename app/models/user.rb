@@ -20,14 +20,15 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :email
   validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
   
-  validates_uniqueness_of :person_id
+  validates_uniqueness_of :person_id, :if => Proc.new { |u| !u.person_id.nil? }
 
-  before_create :make_activation_code 
+  before_create :make_activation_code
+  before_validation :assign_user_to_person
 
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :name, :password, :password_confirmation
+  attr_accessible :login, :email, :name, :password, :person_id, :password_confirmation
 
 
   # Activates the user in the database.
@@ -66,6 +67,16 @@ class User < ActiveRecord::Base
 
   def email=(value)
     write_attribute :email, (value ? value.downcase : nil)
+  end
+  
+  def assign_user_to_person
+    e = Email.find_by_email(email)
+    write_attribute :person_id, (e.nil? ? nil : e.person_id)
+  end
+  
+  def validate
+    # Invalid person email address
+    errors.add(:email, I18n.t('people.email.not_exist')) if person_id.nil?
   end
 
   protected
