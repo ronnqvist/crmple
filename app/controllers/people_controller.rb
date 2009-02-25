@@ -1,7 +1,10 @@
 class PeopleController < ApplicationController
- # before_filter :login_required
-  #Needs to be: before_filter :login_required , :except => [:something]
-  #once we start using registration from external pages.
+  # Person can be created by remote client without a session
+  # TODO: API authencation
+  before_filter :login_required, :except => [:new, :create]
+  
+  # Do not verify autenticity token on remote clients
+  skip_before_filter :verify_authenticity_token, :except => [:new, :create]
 
   before_filter :load_all_roles, :only => [:new, :edit, :create, :update]
   before_filter :find_person_with_includes, :only => [:edit, :show]
