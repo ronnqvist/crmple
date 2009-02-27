@@ -4,7 +4,7 @@ class PeopleController < ApplicationController
   before_filter :login_required, :except => [:new, :create]
   
   # Do not verify autenticity token on remote clients
-  skip_before_filter :verify_authenticity_token, :except => [:new, :create]
+  skip_before_filter :verify_authenticity_token, :only => [:new, :create]
 
   before_filter :load_all_roles, :only => [:new, :edit, :create, :update]
   before_filter :find_person_with_includes, :only => [:edit, :show]
