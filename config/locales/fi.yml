@@ -39,6 +39,7 @@ fi:
     send_to_roles: "Lähetä henkilöille joilla on seuraavat roolit:"
     nobody: "Ei löydy henkilöitä joilla olisi tätä roolia ja tahtoisivat rooliin liittyää s-postia."
     copy_emails: "Kopioi ruudun sisältöä, ja liitä sähköpostiohjelmasi piilokopio (tai Bcc) kenttään (ei tavalliseen vastaanottaja kentään):"
+    send_to_all: "Lähetä kaikille"
 
   save: "Tallenna"
   submit: "Lähetä"

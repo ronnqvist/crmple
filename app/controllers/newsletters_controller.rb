@@ -5,7 +5,11 @@ class NewslettersController < ApplicationController
   end
   
   def list
-    @list = Newsletter.subscribers(params[:selected_roles])
+    if params[:send_to_all]
+      @list = Person.subscribers.map(&:email).join(', ')
+    else
+      @list = Newsletter.subscribers(params[:selected_roles])
+    end
     
     respond_to do |format|
       format.html # /newsletters/list

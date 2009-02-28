@@ -12,6 +12,9 @@
 	   		<%= label "role", role.id, role.name %>
 			</dd>
 	  <% end %>
+	  
+     <dd><%= check_box_tag :send_to_all  %>
+     <%= label_tag :send_to_all, t('newsletters.send_to_all') %></dd>
 	</dl>
 	<%= submit_tag t('submit') %>
 <% end %>
