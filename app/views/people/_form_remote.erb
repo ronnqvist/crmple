@@ -10,3 +10,8 @@
 <%= form.hidden_field :nickname, :value => '' %>
 <%= form.hidden_field :approved_membership, :value => '' %>
 <%= form.hidden_field :comments, :value => '' %>
+
+<div style="display: none">
+   <%= render :partial => 'phone', :collection => @person.phones %>
+   <%= render :partial => 'address', :collection => @person.addresses %>
+</div>
