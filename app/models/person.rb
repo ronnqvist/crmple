@@ -3,12 +3,12 @@ class Person < ActiveRecord::Base
   
   has_many :role_assignments, :dependent => :delete_all
   has_many :roles, :through => :role_assignments
-  has_many :addresses
-  has_many :phones
-  has_many :emails
-  has_many :payments
+  has_many :addresses, :dependent => :destroy
+  has_many :phones, :dependent => :destroy
+  has_many :emails, :dependent => :destroy
+  has_many :payments, :dependent => :destroy
   
-  has_one :user
+  has_one :user, :dependent => :destroy
   
   # User validations
   validates_presence_of :firstname, :lastname
