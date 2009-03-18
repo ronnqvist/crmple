@@ -1,7 +1,8 @@
 class Email < ActiveRecord::Base
   belongs_to :person
   
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i,
+                              :if => Proc.new { |e| !e.email.blank? }
             # Is this one better?     /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
 
                           # Should also accept empty
