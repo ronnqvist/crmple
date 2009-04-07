@@ -5,6 +5,7 @@ paavo:
   lastname: 'Suominen'
   nickname: 'paavo'
   comments: 'test'
+
 matti:
   firstname: 'Matti'
   lastname: 'Meikäläinen'

@@ -9,7 +9,7 @@ fi:
     show: "Henkilötiedot"
     delete:
       delete: "Poista"
-      sure?: "Oletko varma että haluat poistaa tätä käyttäjää?"
+      sure?: "Oletko varma että haluat poistaa tämän käyttäjän?"
     return: "Palaa henkilölistalle"
     name: "Nimi"
     firstname: "Etunimi"
