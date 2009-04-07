@@ -38,11 +38,13 @@ class PeopleController < ApplicationController
 
   def destroy
     @person = Person.find(params[:id])
-    @person.destroy
+    unless current_user.person == @person
+      @person.destroy
     
-    respond_to do |format|
-      format.html { redirect_to people_path }
-      format.xml { head :ok }
+      respond_to do |format|
+        format.html { redirect_to people_path }
+        format.xml { head :ok }
+      end
     end
   end
 

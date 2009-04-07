@@ -10,6 +10,7 @@
 			<th><%= t 'people.nickname' %></th>
 			<th><%= t 'people.town' %></th>
 			<th><%= t 'roles.title' %></th>
+			<th><%= t 'people.delete.delete' %></th>
 		</tr>
 	</thead>
   <% for person in @people %>
@@ -24,6 +25,11 @@
 			<td>
 				<% for role in person.roles %>
 			  	<%= role.name %>
+				<% end %>
+			</td>
+			<td>
+				<% unless current_user.person == person %>
+					<%= link_to t('people.delete.delete'), person, :confirm => t('people.delete.sure?'), :method => :delete %>
 				<% end %>
 			</td>
 		</tr>

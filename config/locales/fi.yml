@@ -7,6 +7,9 @@ fi:
     new: "Lisää uusi henkilö"
     edit: "Muokkaa henkilötiedot"
     show: "Henkilötiedot"
+    delete:
+      delete: "Poista"
+      sure?: "Oletko varma että haluat poistaa tätä käyttäjää?"
     return: "Palaa henkilölistalle"
     name: "Nimi"
     firstname: "Etunimi"
