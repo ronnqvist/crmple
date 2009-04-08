@@ -10,6 +10,6 @@ class Email < ActiveRecord::Base
   validates_uniqueness_of :email
   
   def self.for_newsletter
-    find(:all, :conditions => ['receive_newsletters = ?', true])
+    find(:all, :conditions => ['receive_newsletters = ? AND email != ?', true, ''])
   end
 end
