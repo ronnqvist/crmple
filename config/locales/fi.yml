@@ -8,8 +8,8 @@ fi:
     edit: "Muokkaa henkilötiedot"
     show: "Henkilötiedot"
     delete:
-      delete: "Poista"
-      sure?: "Oletko varma että haluat poistaa tämän käyttäjän?"
+      delete: "Poista tämän henkilön"
+      sure?: "Oletko varma että haluat POISTAA tämän henkilön?"
     return: "Palaa henkilölistalle"
     name: "Nimi"
     firstname: "Etunimi"

@@ -2,6 +2,10 @@
 <% content_for :navigation do %>
 	<li><%= link_to(t('people.return'), people_path)%></li>
 	<li><%= link_to(t('people.edit'), edit_person_path)%></li>
+	<% unless current_user.person == @person %>
+		<li><%= link_to t('people.delete.delete'), @person, :confirm => t('people.delete.sure?'), :method => :delete %></li>
+	<% end %>
+	
 <% end %>
 <dl>
 	<dt><%= t('people.firstname')%></dt>
